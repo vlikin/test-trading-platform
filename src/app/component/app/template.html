@@ -1,0 +1,29 @@
+<md-sidenav-container id="page-sidenav">
+  <md-toolbar color="primary">
+    <button md-mini-fab color="primary" (click)="openSidenav()" class="page-sidenav-button">
+      <md-icon>menu</md-icon>
+    </button>
+    <span><button md-button routerLink="/" color="primary-contrast" class="go-home-button">Trading Platform</button></span>
+  </md-toolbar>
+  <md-sidenav #sidenav mode="push" opened="false">
+    <md-list>
+      <md-list-item *ngIf="!authentication.isAuthenticated()">
+        <a md-button (click)="navigate('/login')" class="login-button">Login</a>
+      </md-list-item>
+      <md-list-item *ngIf="authentication.isAuthenticated()">
+        <a md-button (click)="logout()" class="logout-button">Logout</a>
+      </md-list-item>
+      <div *ngIf="!!authentication.isAuthenticated()">
+        <md-divider></md-divider>
+        <h3 md-subheader>Trading</h3>
+        <md-list-item>
+          <h4 class="md-line"></h4>
+          <a md-button (click)="navigate('/charts')" class="charts-button">Charts</a>
+        </md-list-item>
+      </div>
+    </md-list>
+  </md-sidenav>
+  <div class="route-outlet-container">
+    <router-outlet></router-outlet>
+  </div>
+</md-sidenav-container>
