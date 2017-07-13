@@ -18,6 +18,7 @@ export class AuthenticationService {
   public login(email: string, password: string) {
     if (email == 'viktor.likin@gmail.com' && password == 'password') {
       localStorage.setItem('currentUser', JSON.stringify({token: 'test token'}));
+      this.token = 'test token';
 
       return true;
     }

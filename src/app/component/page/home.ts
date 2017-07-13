@@ -3,9 +3,13 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-home-page-component',
   template: `
-    Home page component...
+    <img src="assets/photo.jpg"  class='photo' alt="">
   `,
-  styles: []
+  styles: [`
+    .photo {
+        width: 100%;
+    } 
+  `]
 })
 export class HomePageComponent {
 }

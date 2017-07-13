@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NvD3Module } from 'angular2-nvd3';
 import {
   MdButtonModule,
   MdIconModule,
@@ -24,11 +25,13 @@ import { HomePageComponent } from './component/page/home';
 import { LoginPageComponent } from './component/page/login';
 import { NotFoundPageComponent } from './component/page/not-found';
 import { ChartsPageComponent } from './component/page/charts';
+import { ChartExamplePageComponent } from './component/page/chart-example';
+import { CandleSticksExamplePageComponent } from './component/page/candle-sticks-example';
 
 // Services.
 import { AuthenticationService } from './service/authentication';
 
-// Guerds.
+// Guards.
 import { AuthenticationGuard } from './guard/authentication';
 
 @NgModule({
@@ -39,13 +42,16 @@ import { AuthenticationGuard } from './guard/authentication';
     NotFoundPageComponent,
     LoginPageComponent,
     HomePageComponent,
-    ChartsPageComponent
+    ChartsPageComponent,
+    ChartExamplePageComponent,
+    CandleSticksExamplePageComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
+    NvD3Module,
 
     // MD Components.
     MdButtonModule,
