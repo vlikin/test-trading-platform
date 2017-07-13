@@ -15,6 +15,16 @@
       </md-list-item>
       <div *ngIf="!!authentication.isAuthenticated()">
         <md-divider></md-divider>
+        <h3 md-subheader>Examples</h3>
+        <md-list-item>
+          <a md-button (click)="navigate('/candle-sticks-example')" class="logout-button">Candle sticks example</a>
+        </md-list-item>
+        <md-list-item>
+          <a md-button (click)="navigate('/chart-example')" class="logout-button">Charts example</a>
+        </md-list-item>
+      </div>
+      <div *ngIf="!!authentication.isAuthenticated()">
+        <md-divider></md-divider>
         <h3 md-subheader>Trading</h3>
         <md-list-item>
           <h4 class="md-line"></h4>

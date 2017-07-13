@@ -47,16 +47,12 @@ export class LoginPageComponent {
               private msgService: MdSnackBar) {
   }
 
-  ngOnInit() {
-  }
-
   private submit() {
     this.isProcessing = true;
     let answer: boolean = this.authenticationService.login(this.form.value.email, this.form.value.password);
     this.isProcessing = false;
     if (answer) {
-      console.log('redirect');
-      this.router.navigate(['/charts']);
+      this.router.navigate(['/candle-sticks-example']);
     }
     else {
       this.msgService.open('Wrong authentication data.');
